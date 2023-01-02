@@ -16,8 +16,7 @@ typedef unsigned int uint;
 
 class ProcessManager {
     public:
-    ProcessManager(const char *szProcessName, const char *module);
-    ProcessManager(unsigned long ProcessID, const char *module = NULL);
+    ProcessManager(const char *szProcessName, unsigned long ProcessID, const char *module);
 
     private: 
     // ProcessNameString is a char array of size 2048

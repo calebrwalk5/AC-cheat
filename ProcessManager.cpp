@@ -151,3 +151,7 @@ bool ProcessManager::SignaturePayload(const char *signature, char *payload, cons
 
     return true;
 }
+
+ProcessManager::~ProcessManager() {
+    close(ProcessHandle);
+}

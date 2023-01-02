@@ -17,7 +17,7 @@ int main() {
 
     char szOpCode[] = "/x90/x90/x90"; // https://guidedhacking.com/
 
-    ProcessManager *procManager = new ProcessManager(processId, "ac_client");
+    ProcessManager *procManager = new ProcessManager("ac_client", processId, "ac_client");
 
     procManager->SignaturePayload(szSignature, szOpCode, strlen(szSignature), strlen(szOpCode), 64, 4);
 
