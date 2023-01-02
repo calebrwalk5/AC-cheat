@@ -15,6 +15,10 @@
 typedef unsigned int uint;
 
 class ProcessManager {
+    public:
+    ProcessManager(const char *szProcessName, const char *module);
+    ProcessManager(unsigned long ProcessID, const char *module = NULL);
+
     private: 
     // ProcessNameString is a char array of size 2048
     char ProcessNameString[2048];
@@ -30,13 +34,6 @@ class ProcessManager {
     // TargetBaseAddress is an unsigned long
     unsigned long TargetBaseAddress;
 
-    // ProcessManager is a constructor that takes a char pointer and an optional char pointer as arguments
-    ProcessManager(const char *szProcessName, const char *module = NULL);
-    // ProcessManager is a second constructor that takes an unsigned long and a char pointer as arguments
-    ProcessManager(unsigned long ProcessID, const char *module);
-    // ProcessManager is a destructor
-    ~ProcessManager();
-
     // SignaturePayload is a member function that takes a char pointer, a char pointer, two ints, an int, and an optional uint as arguments and returns a bool
     bool SignaturePayload(const char *signature, char *payload, const int siglen, const int paylen, const int bsize, uint sigoffset);
     
@@ -44,4 +41,7 @@ class ProcessManager {
     bool WriteProcessMemory(unsigned long address, void *buffer, uint size);
     // ReadProcessMemory is a member function that takes an unsigned long, a void pointer, and a uint as arguments and returns a bool
     bool ReadProcessMemory(unsigned long address, void *buffer, uint size);
+
+    // ProcessManager is a destructor
+    ~ProcessManager();
 };

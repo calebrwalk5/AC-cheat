@@ -8,8 +8,8 @@
 #include <unistd.h>
 #include <stdint.h>
 
-ProcessManager::ProcessManager(unsigned long ProcessID, const char *module) {
-    printf("Here we go\n");
+ProcessManager::ProcessManager(const char *szProcessName, unsigned long ProcessID, const char *module) {
+printf("Here we go\n");
 
     char FilePath[2048];
 
