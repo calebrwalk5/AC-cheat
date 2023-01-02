@@ -89,7 +89,8 @@ long ProcessManager::FindBaseAddress(const char *module) {
         if((ptr = strstr(FileBuffer, module)) == NULL) {
             printf("Failed to find module\n");
             return 0;
-    }
+        }
+    }   
 
     while(*ptr != '\n' && ptr >= FileBuffer) {
         ptr--;
@@ -149,5 +150,4 @@ bool ProcessManager::SignaturePayload(const char *signature, char *payload, cons
     free(buf);
 
     return true;
-}
 }
