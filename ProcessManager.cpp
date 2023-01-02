@@ -17,7 +17,7 @@ printf("Here we go\n");
     DIR *DirectoryHandle = NULL;
 
     if((DirectoryHandle = opendir("/proc/")) == NULL) {
-        printf("ERROR on line 12 of ProcessManager.cpp\n");
+        printf("Failed to attatch to /proc, are you root?\n");
         return;
     }
 

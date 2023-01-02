@@ -1,17 +1,10 @@
 #include "ProcessManager.h"
+#include <iostream>
 
 int main() {
-    // https://stackoverflow.com/a/43796871
-    char line[128];
-    FILE *cmd = popen("pidof -s ac_client", "r");
     unsigned long processId = 0;
-
-    fgets(line, 128, cmd);
-    processId = strtoul(line, NULL, 128);
-
-    printf("%ld\n", processId);
-
-    pclose(cmd);
+    printf("Process ID: ");
+    std::cin >> processId;
 
     const char szSignature[] = "/x48/x8b/x45/x28/x83/x01/x48"; // https://guidedhacking.com/
 
